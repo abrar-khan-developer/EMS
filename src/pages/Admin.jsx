@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import GetLocalStorage from '../lib/GetLocalStorage'
 import Header from '../components/Admin/Header'
+import AllUsersTasksShow from '../components/Admin/AllUsersTasksShow'
 
 function Admin() {
 // role: "employee",
@@ -20,6 +21,7 @@ function Admin() {
   return (
     <>
       <Header User = {User}/>
+      <AllUsersTasksShow />
     </>
   )
 }
