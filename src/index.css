@@ -20,3 +20,10 @@
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #dc2626;
 }
+
+input::placeholder{
+  color: rgb(179, 174, 174);
+}
+textarea::placeholder{
+  color: rgb(179, 174, 174);
+}

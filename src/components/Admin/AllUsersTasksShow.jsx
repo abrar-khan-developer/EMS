@@ -4,13 +4,13 @@ import '../../index.css'
 
 function AllUsersTasksShow() {
   return (
-    <div className="mt-5 rounded-lg bg-[#1c1c1c] p-3 md:p-5">
+    <div className="pt-5 bg-[#1c1c1c] p-3 md:p-5">
 
       {/* Scroll only when needed */}
       <div className="overflow-x-auto custom-scrollbar">
 
         {/* Minimum width so columns don't collapse */}
-        <div className="min-w-[700px]">
+        <div className="min-w-175">
 
           {/* Header */}
           <div className="mb-2 grid grid-cols-5 items-center rounded bg-red-400 py-3 font-semibold text-white">

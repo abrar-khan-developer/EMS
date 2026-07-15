@@ -1,4 +1,5 @@
 import Admin from "./pages/Admin"
+import Employee from "./pages/Employee"
 import Login from "./pages/Login"
 import SignUp from "./pages/SignUp"
 
@@ -7,7 +8,8 @@ function App() {
       <>
         {/* <Login /> */}
         {/* <SignUp /> */}
-        <Admin />
+        {/* <Admin /> */}
+        <Employee />
       </>
   )
 }

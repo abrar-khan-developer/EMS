@@ -2,7 +2,7 @@ import React from 'react'
 
 function Header({ User }) {
 
-    // console.log(User,"From Header")
+    console.log(User,"From Header")
 
     const userLogOut = () => {
         localStorage.removeItem("User");
