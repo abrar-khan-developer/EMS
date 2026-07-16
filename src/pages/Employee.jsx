@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import GetLocalStorage from '../lib/GetLocalStorage'
 import Header from '../components/Admin/Header';
 import TaskListNumber from '../components/Employee/TaskListNumber';
+import TaskList from '../components/Employee/TaskList/TaskList';
 
 function Employee() {
   const [User, setUser] = useState(null)
@@ -20,6 +21,7 @@ function Employee() {
     <div>
       <Header User={User}/>
       <TaskListNumber data={User}/>
+      <TaskList data = {User}/>
     </div>
   )
 }

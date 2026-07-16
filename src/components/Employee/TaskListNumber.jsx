@@ -1,7 +1,7 @@
 import React from 'react'
 
 function TaskListNumber({ data }) {
-    console.log(data,"From TasklistNumber")
+//     console.log(data,"From TasklistNumber")
   return (
 
     <div className='flex justify-between gap-5 mt-10 flex-wrap mx-2'>
