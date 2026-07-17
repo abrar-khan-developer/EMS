@@ -1,8 +1,34 @@
 import React, { useState } from 'react'
 
-function AccesptTask({ User }) {
+function AccesptTask({ User , setData}) {
 
-    const [data, setData] = useState(User)
+    useEffect(() => {
+        setData(User)
+        // console.log(User,"Accept component useEffect")
+    }, [])
+    
+    function taskComplete(){
+
+        setData((pre) => {
+            return {
+            ...pre,
+            completed :true,
+            active: false
+            }
+        })
+
+    }
+    function taskFail(){
+
+        setData((pre) => {
+            return {
+            ...pre,
+            failed :true,
+            active: false
+            }
+        })
+
+    }
 
   return (
       <div className = " h-full w-75 rounded-xl bg-red-400 p-5">
@@ -18,11 +44,11 @@ function AccesptTask({ User }) {
             <div className='flex justify-between mt-4 '>
                 <button 
                     className='bg-green-500 py-1 px-2 text-sm hover:cursor-pointer active:bg-green-300'
-                    onClick={() => updateTaskStatus(taskIndex, 'completed')}
+                    onClick={() => taskComplete()}
                     >Mark as Completed</button>
                 <button 
                     className='bg-red-500 py-1 px-2 text-sm hover:cursor-pointer active:bg-green-300'
-                    onClick={() => updateTaskStatus(taskIndex, 'failed')}
+                    onClick={() => taskFail()}
                     >Mark as Failed</button>
             </div>
       </div>
