@@ -25,7 +25,6 @@ useEffect(() => {
   useEffect(() => {
     
     const LocalUser = GetLocalStorage()
-    // console.log(LocalUser,"localStorage user")
     if(LocalUser) {
       setUser(LocalUser)
     }

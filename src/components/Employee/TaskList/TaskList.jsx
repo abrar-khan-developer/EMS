@@ -5,7 +5,7 @@ import CompleteTask from './CompleteTask'
 import FailedTask from './FailedTask'
 import SetLocalStorage from '../../../lib/SetLocalStorage'
 
-function TaskList({ User , setData}) {
+function TaskList({ User}) {
 
 
 // console.log('After useEffect')
