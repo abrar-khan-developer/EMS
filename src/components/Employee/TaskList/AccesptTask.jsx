@@ -1,32 +1,32 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-function AccesptTask({ User , setData}) {
+function AccesptTask({ data }) {
 
     useEffect(() => {
-        setData(User)
+        // setData(User)
         // console.log(User,"Accept component useEffect")
     }, [])
     
     function taskComplete(){
 
-        setData((pre) => {
-            return {
-            ...pre,
-            completed :true,
-            active: false
-            }
-        })
+        // setData((pre) => {
+        //     return {
+        //     ...pre,
+        //     completed :true,
+        //     active: false
+        //     }
+        // })
 
     }
     function taskFail(){
 
-        setData((pre) => {
-            return {
-            ...pre,
-            failed :true,
-            active: false
-            }
-        })
+        // setData((pre) => {
+        //     return {
+        //     ...pre,
+        //     failed :true,
+        //     active: false
+        //     }
+        // })
 
     }
 

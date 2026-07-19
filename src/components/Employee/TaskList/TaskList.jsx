@@ -5,19 +5,19 @@ import CompleteTask from './CompleteTask'
 import FailedTask from './FailedTask'
 import SetLocalStorage from '../../../lib/SetLocalStorage'
 
-function TaskList({ User}) {
+function TaskList({ User , setProfile , profile }) {
 
+// console.log(User, 'After useEffect')
 
-// console.log('After useEffect')
   return (
 
     <div id = 'taskList' className = "overflow-x-auto h-full w-full mt-10 py-5  flex items-center      justify-evenly gap-5 flex-wrap">
 
       {User?.tasks?.map((elem, ind) => {
         if (elem.newTask) {
-          return <NewTask key={ind} User={elem} taskIndex={ind}  setData = {setData}/>
+          return <NewTask key={ind} User={elem} taskIndex={ind}  setProfile = {setProfile} profile = {profile}/>
         } else if (elem.active) {
-          return <AccesptTask key={ind} User={elem} taskIndex={ind} setData = {setData} />
+          return <AccesptTask key={ind} User={elem} taskIndex={ind}  />
         } else if (elem.completed) {
           return <CompleteTask key={ind} User={elem} />
         } else if (elem.failed) {

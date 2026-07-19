@@ -7,20 +7,7 @@ import SetLocalStorage from '../lib/SetLocalStorage';
 
 function Employee() {
   const [User, setUser] = useState(null)
-  const [data, setData] = useState(null)
-
-
-useEffect(() => {
-  SetLocalStorage(data)
-
-  const LocalUser = GetLocalStorage()
-    // console.log(LocalUser,"localStorage user")
-    if(LocalUser) {
-      setUser(LocalUser)
-      console.log(LocalUser,"get varibale from localstorage")
-    }
-
-},[data])
+  const [profile , setProfile] = useState(null)
 
   useEffect(() => {
     
@@ -28,14 +15,26 @@ useEffect(() => {
     if(LocalUser) {
       setUser(LocalUser)
     }
+    setProfile(LocalUser)
 
   },[])
+
+ useEffect(() => {
+    
+    const LocalUser = GetLocalStorage()
+    if(LocalUser) {
+      setUser(LocalUser)
+    }
+
+  },[profile])
+
+
 
   return (
     <div>
       <Header User={User}/>
-      <TaskListNumber data={User}/>
-      <TaskList User = {User}/>
+      <TaskListNumber data={User} />
+      <TaskList User = {User} setProfile = {setProfile} profile = {profile}/>
     </div>
   )
 }

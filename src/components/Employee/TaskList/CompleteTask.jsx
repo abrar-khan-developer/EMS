@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 function CompleteTask({ User }) {
     
-        const [data, setData] = useState(User)
+        // const [data, setData] = useState(User)
         
   return (
      <div className = "h-full w-75 rounded-xl bg-blue-400 p-5">

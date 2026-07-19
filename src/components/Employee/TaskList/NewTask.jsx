@@ -1,47 +1,25 @@
 import React, { useEffect, useState } from 'react'
+import SetLocalStorage from '../../../lib/SetLocalStorage';
 
-function NewTask({ User,setData }) {
+function NewTask({ User , setProfile , profile}) {
   
       // const [User, setUser] = useState(User)
-       useEffect(() => {
-        setData(User)
-//         console.log(User,"NewTask component useEffect")
-//         active
-// : 
-// true
-// category
-// : 
-// "Design"
-// completed
-// : 
-// false
-// failed
-// : 
-// false
-// newTask
-// : 
-// true
-// taskDate
-// : 
-// "2026-06-25"
-// taskDescription
-// : 
-// "Create responsive homepage UI"
-// taskTitle
-// : 
-// "Design Homepage"
+    useEffect(() => {
+        // setData(User)
+
     }, [])
-      // console.log(User)
+      console.log(User)
       
 function taskAccept(){
-  setData((pre) => {
-    return {
-      ...pre,
-      newTask :false,
-      active: true
-    }
-
-  })
+setProfile((prev) => ({
+  ...prev,
+  tasks: prev.tasks.map((task) => ({
+    ...task,
+    newTask: false,
+    active: true,
+  })),
+}));
+SetLocalStorage(profile)
 }
   return (
 

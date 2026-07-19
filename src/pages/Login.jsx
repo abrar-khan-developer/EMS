@@ -27,6 +27,9 @@ function Login() {
     }
 
     SetLocalStorage(User)
+
+    setEmail("")
+    setPassword("")
     // console.log(User,"User details")
 
   }
