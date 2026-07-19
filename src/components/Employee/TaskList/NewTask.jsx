@@ -1,26 +1,33 @@
 import React, { useEffect, useState } from 'react'
 import SetLocalStorage from '../../../lib/SetLocalStorage';
 
-function NewTask({ User , setProfile , profile}) {
+function NewTask({ User , taskAccept}) {
   
+  console.log('checking re-render',User)
       // const [User, setUser] = useState(User)
     useEffect(() => {
         // setData(User)
 
     }, [])
-      console.log(User)
+      console.log(User,"New task")
       
-function taskAccept(){
-setProfile((prev) => ({
-  ...prev,
-  tasks: prev.tasks.map((task) => ({
-    ...task,
-    newTask: false,
-    active: true,
-  })),
-}));
-SetLocalStorage(profile)
-}
+
+// function taskAccept(){
+//     const updatedUser = {
+//         ...User,
+//         newTask: false,
+//         active: true,
+//    }
+ 
+//   setUser((prev) => {
+//     return{
+//       ...prev,
+//       tasks:[...prev,updatedUser]
+//     }
+//   })
+  
+  
+// }
   return (
 
     <div className = "h-full w-75 rounded-xl bg-green-400 p-5">

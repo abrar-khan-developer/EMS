@@ -5,7 +5,7 @@ import CompleteTask from './CompleteTask'
 import FailedTask from './FailedTask'
 import SetLocalStorage from '../../../lib/SetLocalStorage'
 
-function TaskList({ User , setProfile , profile }) {
+function TaskList({ User , taskAccept }) {
 
 // console.log(User, 'After useEffect')
 
@@ -15,7 +15,7 @@ function TaskList({ User , setProfile , profile }) {
 
       {User?.tasks?.map((elem, ind) => {
         if (elem.newTask) {
-          return <NewTask key={ind} User={elem} taskIndex={ind}  setProfile = {setProfile} profile = {profile}/>
+          return <NewTask key={ind} User={elem} taskIndex={ind}  taskAccept = {taskAccept}/>
         } else if (elem.active) {
           return <AccesptTask key={ind} User={elem} taskIndex={ind}  />
         } else if (elem.completed) {
