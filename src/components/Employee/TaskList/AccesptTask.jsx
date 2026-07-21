@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 
-function AccesptTask({ User }) {
+function AccesptTask({ User , taskIndex , failedTask , completeTask }) {
 
-    console.log(User,'AccesptTask')
+    // console.log(User,'AccesptTask')
     useEffect(() => {
         // setUser(User)
         // console.log(User,"Accept component useEffect")
@@ -45,11 +45,11 @@ function AccesptTask({ User }) {
             <div className='flex justify-between mt-4 '>
                 <button 
                     className='bg-green-500 py-1 px-2 text-sm hover:cursor-pointer active:bg-green-300'
-                    onClick={() => taskComplete()}
+                    onClick={() => completeTask(taskIndex)}
                     >Mark as Completed</button>
                 <button 
                     className='bg-red-500 py-1 px-2 text-sm hover:cursor-pointer active:bg-green-300'
-                    onClick={() => taskFail()}
+                    onClick={() => failedTask(taskIndex)}
                     >Mark as Failed</button>
             </div>
       </div>

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import SetLocalStorage from '../../../lib/SetLocalStorage';
 
-function NewTask({ User , taskAccept}) {
+function NewTask({ User , taskAccept , taskIndex}) {
   
-  console.log('checking re-render',User)
+  // console.log('checking re-render',taskIndex)
       // const [User, setUser] = useState(User)
     useEffect(() => {
         // setData(User)
@@ -43,7 +43,7 @@ function NewTask({ User , taskAccept}) {
         <div className='mt-4'>
             <button 
               className='w-full bg-amber-600 hover:cursor-pointer active:bg-amber-400'
-              onClick={() => taskAccept()}
+              onClick={() => taskAccept(taskIndex)}
               > Accept Task </button>
         </div>
     </div>

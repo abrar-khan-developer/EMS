@@ -5,7 +5,7 @@ import CompleteTask from './CompleteTask'
 import FailedTask from './FailedTask'
 import SetLocalStorage from '../../../lib/SetLocalStorage'
 
-function TaskList({ User , taskAccept }) {
+function TaskList({ User , taskAccept , completeTask , failedTask}) {
 
 // console.log(User, 'After useEffect')
 
@@ -17,7 +17,7 @@ function TaskList({ User , taskAccept }) {
         if (elem.newTask) {
           return <NewTask key={ind} User={elem} taskIndex={ind}  taskAccept = {taskAccept}/>
         } else if (elem.active) {
-          return <AccesptTask key={ind} User={elem} taskIndex={ind}  />
+          return <AccesptTask key={ind} User={elem} taskIndex={ind}  completeTask = {completeTask} failedTask = {failedTask} />
         } else if (elem.completed) {
           return <CompleteTask key={ind} User={elem} />
         } else if (elem.failed) {

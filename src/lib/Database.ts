@@ -13,6 +13,7 @@ const employee = [
     },
     tasks: [
       {
+        serialNO : 0,
         active: true,
         newTask: true,
         completed: false,
@@ -23,6 +24,7 @@ const employee = [
         category: "Design",
       },
       {
+        serialNO : 1,
         active: false,
         newTask: false,
         completed: true,
@@ -33,6 +35,7 @@ const employee = [
         category: "Frontend",
       },
       {
+        serialNO : 2,
         active: false,
         newTask: false,
         completed: false,

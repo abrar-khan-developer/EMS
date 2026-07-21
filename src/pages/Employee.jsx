@@ -8,7 +8,7 @@ import SetLocalStorage from '../lib/SetLocalStorage';
 function Employee() {
   const [User, setUser] = useState(null)
   // const [profile , setProfile] = useState(null)
-  // console.log(User,"Empoyee.jsx")
+  console.log(User?.taskCount,"Empoyee.jsx")
   // useEffect(() => {
     
   //   const LocalUser = GetLocalStorage()
@@ -19,15 +19,89 @@ function Employee() {
 
   // },[])
 
-  function taskAccept(){
-   const updatedTasks = User.tasks.map((task) => ({
-    ...task,
-    newTask: false,
-    active: true,
-  }));
+function taskAccept(ind){
+
+  const updatedTasks = User.tasks.map((task) => {
+    // console.log(ind,"employee.jsx")
+    if (ind === task.serialNO) {
+      return {
+        ...task,
+        newTask: false,
+        active: true,
+      };
+    }
+
+    return task;
+  });
+
+  const updatedUser = {
+
+  ...User,
+  taskCount: {
+      ...User.taskCount,
+      active: User.taskCount.active + 1,
+      // newTask: User.taskCount.newTask - 1,
+  },
+
+  tasks: updatedTasks,
+
+  };
+
+  setUser(updatedUser);
+  SetLocalStorage(updatedUser);
+}
+
+function failedTask(ind){
+
+  const updatedTasks = User.tasks.map((task) => {
+    // console.log(ind,"employee.jsx")
+    if (ind === task.serialNO) {
+      return {
+        ...task,
+        completed: false,
+        active: false,
+        failed: true,
+      };
+    }
+
+    return task;
+  });
 
   const updatedUser = {
     ...User,
+    taskCount: {
+      ...User.taskCount,
+      failed: User.taskCount.failed + 1,
+    },
+    tasks: updatedTasks,
+  };
+
+  setUser(updatedUser);
+  SetLocalStorage(updatedUser);
+}
+
+function completeTask(ind){
+
+  const updatedTasks = User.tasks.map((task) => {
+    console.log(ind,"employee.jsx")
+    if (ind === task.serialNO) {
+      return {
+        ...task,
+        failed: false,
+        active: false,
+        completed: true,
+      };
+    }
+
+    return task;
+  });
+
+  const updatedUser = {
+    ...User,
+      taskCount: {
+      ...User.taskCount,
+      completed: User.taskCount.completed + 1,
+    },
     tasks: updatedTasks,
   };
 
@@ -51,7 +125,7 @@ function Employee() {
     <div>
       <Header User = {User}/>
       <TaskListNumber data = {User}  />
-      <TaskList User = {User} taskAccept = {taskAccept}/>
+      <TaskList User = {User} taskAccept = {taskAccept} completeTask = {completeTask} failedTask = {failedTask}/>
     </div>
   )
 }
