@@ -7,7 +7,7 @@ import SetLocalStorage from '../lib/SetLocalStorage';
 
 function Employee() {
   const [User, setUser] = useState(null)
-  // const [profile , setProfile] = useState(null)
+
   console.log(User?.taskCount,"Empoyee.jsx")
   // useEffect(() => {
     
@@ -40,7 +40,6 @@ function taskAccept(ind){
   taskCount: {
       ...User.taskCount,
       active: User.taskCount.active + 1,
-      // newTask: User.taskCount.newTask - 1,
   },
 
   tasks: updatedTasks,
