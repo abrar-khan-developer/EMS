@@ -13,20 +13,21 @@ function AllUsersTasksShow() {
         <div className="min-w-175">
 
           {/* Header */}
-          <div className="mb-2 grid grid-cols-5 items-center rounded bg-red-400 py-3 font-semibold text-white">
+          <div className="mb-2 grid grid-cols-6 items-center rounded bg-red-400 py-3 font-semibold text-white">
             <h2 className="text-center text-sm md:text-base">Employee Name</h2>
             <h2 className="text-center text-sm md:text-base">New Task</h2>
             <h2 className="text-center text-sm md:text-base">Active Task</h2>
             <h2 className="text-center text-sm md:text-base">Completed</h2>
             <h2 className="text-center text-sm md:text-base">Failed</h2>
+            <h2 className="text-center text-sm md:text-base">Role</h2>
           </div>
 
           {/* Body */}
-          <div className="space-y-2">
+          <div className="space-y-5">
             {employee.map((emp) => (
               <div
                 key={emp.email}
-                className="grid grid-cols-5 items-center rounded bg-emerald-500 py-3"
+                className="grid grid-cols-6 items-center rounded bg-emerald-500 py-3 pe-2 md:pe-10"
               >
                 <p className="truncate px-2 text-center text-sm font-medium md:text-base">
                   {emp.firstName}
@@ -47,6 +48,10 @@ function AllUsersTasksShow() {
                 <p className="text-center text-sm font-semibold text-red-600 md:text-base">
                   {emp.taskCount.failed}
                 </p>
+                <select className="text-center text-sm font-semibold text-black md:text-base outline-none ">
+                  <option value="saab">Employee</option>
+                  <option value="volvo">Admin</option>
+              </select>
               </div>
             ))}
           </div>

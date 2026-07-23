@@ -71,7 +71,7 @@ const SignUp = () => {
                     Already have an account?
                   <span
                     // to="/signup"
-                    className="ml-2 cursor-pointer rounded-full border border-emerald-600 px-3 py-1 font-medium text-emerald-600 transition-all duration-200 hover:bg-emerald-600 hover:text-white"
+                    className="inline-block mt-4 md:mt-0 ml-2 cursor-pointer rounded-full border border-emerald-600 px-3 py-1 font-medium text-emerald-600 transition-all duration-200 hover:bg-emerald-600 hover:text-white"
                   >
                     Sign In
                   </span>

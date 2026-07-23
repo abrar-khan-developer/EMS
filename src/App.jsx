@@ -6,9 +6,9 @@ import SignUp from "./pages/SignUp"
 function App() {
   return (
       <>
-        {/* <Login /> */}
-        {/* <SignUp /> */}
-        {/* <Admin /> */}
+        <Login />
+        <SignUp />
+        <Admin />
         <Employee />
       </>
   )

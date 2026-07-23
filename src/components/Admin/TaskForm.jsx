@@ -8,8 +8,8 @@ function TaskForm() {
     const [taskCategory , setTaskCategory] = useState('')
 
     //  const [userData, setUserData] =  useContext(AuthContext)
-
-    const [newTask , setNewTask] = useState({})
+     const [newTask , setNewTask] = useState({})
+   
 
     const handlerSubmit = (e) => {
 
@@ -20,7 +20,7 @@ function TaskForm() {
             return null
         }
 
-        setNewTask({taskTitle, taskDescription : taskDesc, taskDate, assignTo, category: taskCategory, active:false, newTask:true, failed:false, completed:false })
+        setNewTask({taskTitle, taskDescription : taskDesc, taskDate, assignTo, category: taskCategory, active:false, newTask:true, failed:false, completed:false  })
 
         // const data = userData.employees
         // data.forEach((elem) => {
