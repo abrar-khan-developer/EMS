@@ -32,7 +32,7 @@ function AccesptTask({ User , taskIndex , failedTask , completeTask }) {
     }
 
   return (
-      <div className = " h-full w-75 rounded-xl bg-red-400 p-5">
+      <div className = " h-full w-75 rounded-xl bg-green-400 p-5">
 
             <div className = 'flex justify-between items-center'>
                 <h3 className = "bg-white px-3 py-1 rounded text-xs sm:text-sm"> {User.category} </h3>

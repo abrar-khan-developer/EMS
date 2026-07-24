@@ -1,9 +1,10 @@
 import { useState } from "react"
 import Employee from "../lib/Database"
 import SetLocalStorage from "../lib/SetLocalStorage"
+import { Link } from "react-router-dom"
 
 
-function Login() {
+function Login({ setUser }) {
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -27,7 +28,7 @@ function Login() {
     }
 
     SetLocalStorage(User)
-
+    setUser(User)
     setEmail("")
     setPassword("")
     // console.log(User,"User details")
@@ -62,12 +63,14 @@ function Login() {
 
                 <p className="mt-2 md:mt-4 text-gray-600">
                     Don't have an account?
-                  <span
+                
+                  <Link
+                    to = "/register"
                     // to="/signup"
                     className="inline-block mt-4 md:mt-0 ml-2 cursor-pointer rounded-full border border-emerald-600 px-3 py-1 font-medium text-emerald-600 transition-all duration-200 hover:bg-emerald-600 hover:text-white"
                   >
                     Sign Up
-                  </span>
+                  </Link>
                 </p>
                 
             </form>

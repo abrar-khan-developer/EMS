@@ -1,4 +1,11 @@
 const employee = [
+   {
+    id: "1",
+    firstName: "Abrar",
+    email: "a@gmail.com",
+    password: "123",
+    role: "admin",
+  },
   {
     id: "1",
     firstName: "Ahmed",

@@ -3,15 +3,21 @@ import employee from "../../lib/Database";
 import '../../index.css'
 import SetLocalStorage from "../../lib/SetLocalStorage";
 
-function AllUsersTasksShow({ User , setUser }) {
-    // const [ role , setRole ] = useState('employee')
+function AllUsersTasksShow({ User  }) {
 
-    function roleCahnge(e){
+
+    function roleCahnge(e , firstName){
         // setRole(e.target.value)
-        User.role = e.target.value
-        console.log(User,"In AllUsersTasksShow")
+        employee.forEach((obj) => {
+          if(obj.firstName === firstName){
+            obj.role = e.target.value
+          }
+        })
+        // console.log(employee,"Employee")
+        // console.log(User,"In AllUsersTasksShow")
         SetLocalStorage(User)
     }
+
   return (
     <div className="pt-5 bg-[#1c1c1c] p-3 md:p-5">
 
@@ -33,8 +39,11 @@ function AllUsersTasksShow({ User , setUser }) {
 
           {/* Body */}
           <div className="space-y-5">
-            {employee.map((emp) => (
-              <div
+            {employee.map((emp) => {
+
+               if(emp.role !== 'admin'){
+                return(
+                  <div
                 key={emp.email}
                 className="grid grid-cols-6 items-center rounded bg-emerald-500 py-3 pe-2 md:pe-10"
               >
@@ -58,13 +67,17 @@ function AllUsersTasksShow({ User , setUser }) {
                   {emp.taskCount.failed}
                 </p>
                 <select className="text-center text-sm font-semibold text-black md:text-base outline-none "
-                onChange={(e) => { roleCahnge(e)}}
+                onChange={(e) => { roleCahnge(e , emp.firstName)}}
                 >
                   <option value="employee">Employee</option>
                   <option value="admin">Admin</option>
               </select>
-              </div>
-            ))}
+                  </div>)
+                }
+
+              } 
+
+            )}
           </div>
 
         </div>

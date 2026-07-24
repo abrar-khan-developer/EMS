@@ -8,6 +8,7 @@ import GetLocalStorage from '../src/lib/GetLocalStorage'
 import SetLocalStorage from "./lib/SetLocalStorage";
 
 function App() {
+
    const [User, setUser] = useState(null)
 
     useEffect(() => {
@@ -25,12 +26,17 @@ function App() {
       <>
         <Router>
 
-          {/* <Login />
+          {/* 
           */}
-          <Admin User = {User} setUser = {setUser} />
-          {/* <Employee User = {User} /> */}
+          
+          {/* */}
+          {/*  */}
            <Routes>
-              <Route path="/register" component={ <SignUp />} />
+              <Route path="/" element={ User ? 
+                  User?.role == 'admin' ? <Admin User = {User} setUser = {setUser}/> 
+                  : <Employee User = {User} setUser = {setUser}/> 
+                : <Login  setUser = {setUser} /> }  />
+              <Route path="/register" element={ <SignUp />} />
               {/* <Route path="/" element={<h1>hello home /</h1>} /> */}
            </Routes>
         </Router>

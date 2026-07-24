@@ -3,16 +3,16 @@ import Header from '../components/Admin/Header'
 import AllUsersTasksShow from '../components/Admin/AllUsersTasksShow'
 import TaskForm from '../components/Admin/TaskForm'
 
-function Admin({ User , setUser }) {
+function Admin({ User ,  setUser }) {
 // role: "employee",
 
 
 
   return (
     <>
-      <Header  />
-      <TaskForm  />
-      <AllUsersTasksShow User = { User } setUser = { setUser }/>
+      <Header setUser = {setUser} />
+      <TaskForm  User = {User} />
+      <AllUsersTasksShow User = { User } />
     </>
   )
 }

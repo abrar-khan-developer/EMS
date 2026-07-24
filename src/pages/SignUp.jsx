@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import employee from "../lib/Database";
 
 const SignUp = () => {
 
@@ -6,6 +8,8 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const navigate = useNavigate()
+  
   const submitHandler = (e) => {
     e.preventDefault();
 
@@ -14,6 +18,7 @@ const SignUp = () => {
       firstName,
       email,
       password,
+      role: 'employee',
       taskCount: {
         active: 0,
         newTask: 0,
@@ -23,7 +28,8 @@ const SignUp = () => {
       tasks: [],
     };
 
-
+    employee.push(newEmployee)
+    navigate("/")
     setFirstName("");
     setEmail("");
     setPassword("");
@@ -69,12 +75,14 @@ const SignUp = () => {
           </button>
              <p className="mt-4 text-gray-600">
                     Already have an account?
-                  <span
+                    
+                  <Link
+                    to = "/"
                     // to="/signup"
                     className="inline-block mt-4 md:mt-0 ml-2 cursor-pointer rounded-full border border-emerald-600 px-3 py-1 font-medium text-emerald-600 transition-all duration-200 hover:bg-emerald-600 hover:text-white"
                   >
                     Sign In
-                  </span>
+                  </Link>
               </p>
 
         </form>

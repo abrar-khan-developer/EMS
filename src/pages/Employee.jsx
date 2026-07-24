@@ -4,7 +4,7 @@ import TaskListNumber from '../components/Employee/TaskListNumber';
 import TaskList from '../components/Employee/TaskList/TaskList';
 import SetLocalStorage from '../lib/SetLocalStorage';
 
-function Employee({User}) {
+function Employee({User , setUser}) {
  
 
   // console.log(User?.taskCount,"Empoyee.jsx")
@@ -109,7 +109,7 @@ function completeTask(ind){
 
   return (
     <div>
-      <Header User = {User}/>
+      <Header User = {User} setUser = {setUser}/>
       <TaskListNumber data = {User}  />
       <TaskList User = {User} taskAccept = {taskAccept} completeTask = {completeTask} failedTask = {failedTask}/>
     </div>
