@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import employee from "../../lib/Database";
 import '../../index.css'
+import SetLocalStorage from "../../lib/SetLocalStorage";
 
-function AllUsersTasksShow() {
+function AllUsersTasksShow({ User , setUser }) {
+    // const [ role , setRole ] = useState('employee')
+
+    function roleCahnge(e){
+        // setRole(e.target.value)
+        User.role = e.target.value
+        console.log(User,"In AllUsersTasksShow")
+        SetLocalStorage(User)
+    }
   return (
     <div className="pt-5 bg-[#1c1c1c] p-3 md:p-5">
 
@@ -48,9 +57,11 @@ function AllUsersTasksShow() {
                 <p className="text-center text-sm font-semibold text-red-600 md:text-base">
                   {emp.taskCount.failed}
                 </p>
-                <select className="text-center text-sm font-semibold text-black md:text-base outline-none ">
-                  <option value="saab">Employee</option>
-                  <option value="volvo">Admin</option>
+                <select className="text-center text-sm font-semibold text-black md:text-base outline-none "
+                onChange={(e) => { roleCahnge(e)}}
+                >
+                  <option value="employee">Employee</option>
+                  <option value="admin">Admin</option>
               </select>
               </div>
             ))}

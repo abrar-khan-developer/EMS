@@ -3,7 +3,7 @@ import Header from '../components/Admin/Header'
 import AllUsersTasksShow from '../components/Admin/AllUsersTasksShow'
 import TaskForm from '../components/Admin/TaskForm'
 
-function Admin() {
+function Admin({ User , setUser }) {
 // role: "employee",
 
 
@@ -12,7 +12,7 @@ function Admin() {
     <>
       <Header  />
       <TaskForm  />
-      <AllUsersTasksShow />
+      <AllUsersTasksShow User = { User } setUser = { setUser }/>
     </>
   )
 }

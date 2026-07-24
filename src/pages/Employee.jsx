@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import GetLocalStorage from '../lib/GetLocalStorage'
 import Header from '../components/Admin/Header';
 import TaskListNumber from '../components/Employee/TaskListNumber';
 import TaskList from '../components/Employee/TaskList/TaskList';
 import SetLocalStorage from '../lib/SetLocalStorage';
 
-function Employee() {
-  const [User, setUser] = useState(null)
+function Employee({User}) {
+ 
 
-  console.log(User?.taskCount,"Empoyee.jsx")
+  // console.log(User?.taskCount,"Empoyee.jsx")
   // useEffect(() => {
     
   //   const LocalUser = GetLocalStorage()
@@ -107,18 +106,6 @@ function completeTask(ind){
   setUser(updatedUser);
   SetLocalStorage(updatedUser);
 }
-
- useEffect(() => {
-    
-    const LocalUser = GetLocalStorage()
-
-    if(LocalUser) {
-      setUser(LocalUser)
-    }
-
-  },[])
-
-
 
   return (
     <div>
