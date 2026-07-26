@@ -25,12 +25,7 @@ function App() {
   return (
       <>
         <Router>
-
-          {/* 
-          */}
-          
-          {/* */}
-          {/*  */}
+ 
            <Routes>
               <Route path="/" element={ User ? 
                   User?.role == 'admin' ? <Admin User = {User} setUser = {setUser}/> 
