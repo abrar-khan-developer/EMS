@@ -19,7 +19,6 @@ function App() {
       setUser(LocalUser)
     }
 
-    // console.log(User,"User value again when app.jsx again run in useEffect")
   },[])
 
   return (
