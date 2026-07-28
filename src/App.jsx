@@ -31,7 +31,6 @@ function App() {
                   : <Employee User = {User} setUser = {setUser}/> 
                 : <Login  setUser = {setUser} /> }  />
               <Route path="/register" element={ <SignUp />} />
-              {/* <Route path="/" element={<h1>hello home /</h1>} /> */}
            </Routes>
         </Router>
       </>
