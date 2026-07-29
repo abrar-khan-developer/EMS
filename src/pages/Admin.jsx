@@ -4,7 +4,6 @@ import AllUsersTasksShow from '../components/Admin/AllUsersTasksShow'
 import TaskForm from '../components/Admin/TaskForm'
 
 function Admin({ User ,  setUser }) {
-// role: "employee",
 
 
 
