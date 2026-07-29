@@ -7,7 +7,7 @@ import SetLocalStorage from '../lib/SetLocalStorage';
 function Employee({User , setUser}) {
  
 
-  // console.log(User?.taskCount,"Empoyee.jsx")
+
   // useEffect(() => {
     
   //   const LocalUser = GetLocalStorage()
