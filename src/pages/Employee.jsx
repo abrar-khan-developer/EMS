@@ -8,15 +8,7 @@ function Employee({User , setUser}) {
  
 
 
-  // useEffect(() => {
-    
-  //   const LocalUser = GetLocalStorage()
-  //   if(LocalUser) {
-  //     setUser(LocalUser)
-  //   }
-  //   setProfile(LocalUser)
 
-  // },[])
 
 function taskAccept(ind){
 
