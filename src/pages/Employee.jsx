@@ -13,7 +13,6 @@ function Employee({User , setUser}) {
 function taskAccept(ind){
 
   const updatedTasks = User.tasks.map((task) => {
-    // console.log(ind,"employee.jsx")
     if (ind === task.serialNO) {
       return {
         ...task,
